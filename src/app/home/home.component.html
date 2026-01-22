@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="device-container">
+        <img class="img-responsive" src="assets/img/01.png">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1>Feliz Día de San Valentín</h1>
+          @if (showMap()) {
+          <h4 style="margin-bottom: 30px; text-align: center;">🎁 Recoge tu regalo en Kiss Me con tu nombre 🫰🏼</h4>
+          <a href="https://www.google.com/maps/search/?api=1&query=19.904670,-99.338148" target="_blank" rel="noopener">
+            <div style="width:100%; height:180px; border-radius:10px; overflow:hidden; border:1px solid #ddd;">
+              <iframe src="https://maps.google.com/maps?q=19.904670,-99.338148&z=16&output=embed"
+                style="width:100%; height:100%; border:0; pointer-events:none;" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </a>
+          } @else {
+          <h4>Te deseo un año con canciones que te pongan feliz, noches tranquilas y mensajes que te hagan sonreír sin
+            querer. Que la vida te sorprenda, pero bonito… como cuando te acuerdas que todavía existen cosas lindas. Con
+            todo mi cariño, Marco. 🌙✨</h4>
+          <div style="margin-top: 40px; text-align: center;">
+            <button class="btn btn-giftpink btn-gift-emoji" (click)="showModal()">
+              <span class="gift-emoji" aria-hidden="true">🎁</span>
+              Abrir regalo
+            </button>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="audioembed">
+  <audio controls="true" autoplay="true" src="assets/audio/audio.mp3" onloadeddata="setLowVolume()"
+    id="audio1"></audio>
+</div>
