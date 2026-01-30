@@ -12,11 +12,11 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 })
 export default class HomeComponent {
   public showMap: WritableSignal<boolean> = signal<boolean>(false);
-  public phrase: WritableSignal<string> = signal<string>('Enjambre');
+  public phrase: WritableSignal<string> = signal<string>('Oler A Ti');
 
   public async showModal() {
     const { value: text } = await Swal.fire({
-      title: "¿Cuál es mi banda favorita? Pista: 🐝",
+      title: "¿Cómo se llama la canción de fondo? 🎵",
       input: "text",
       width: 500,
       heightAuto: false,
@@ -38,7 +38,7 @@ export default class HomeComponent {
           if (this.format(value) === this.format(this.phrase())) {
             resolve();
           } else {
-            resolve("Te falta barrio musical 😠");
+            resolve("Así no se llama ☝🏻😌");
           }
         });
       },
@@ -48,8 +48,8 @@ export default class HomeComponent {
     if (text) {
 
       Swal.fire({
-        title: "🤘🏼 Ahh loca… ¡sí te la sabes! 🤘🏼",
-        text: "Enjambre por siempre 🐝",
+        title: "🎊 Respuesta correcta 🎊",
+        text: "Espero que te guste el detalle 🎀",
         icon: "success",
         showConfirmButton: false,
         width: 500,
