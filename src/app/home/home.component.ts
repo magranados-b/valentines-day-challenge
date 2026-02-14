@@ -12,11 +12,11 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 })
 export default class HomeComponent {
   public showMap: WritableSignal<boolean> = signal<boolean>(false);
-  public phrase: WritableSignal<string> = signal<string>('Oler A Ti');
+  public phrase: WritableSignal<string> = signal<string>('El Amor');
 
   public async showModal() {
     const { value: text } = await Swal.fire({
-      title: "¿Cómo se llama la canción de fondo? 🎵",
+      title: "Si lo das, no se acaba; si lo guardas, se enfría. ¿Qué es?",
       input: "text",
       width: 500,
       heightAuto: false,
@@ -28,7 +28,7 @@ export default class HomeComponent {
         left top
         no-repeat
       `,
-      inputPlaceholder: "Nombre",
+      inputPlaceholder: "Respuesta",
       confirmButtonText: "Aceptar",
       cancelButtonText: "Cancelar",
       confirmButtonColor: "rgb(251, 163, 213)",
@@ -38,7 +38,7 @@ export default class HomeComponent {
           if (this.format(value) === this.format(this.phrase())) {
             resolve();
           } else {
-            resolve("Así no se llama ☝🏻😌");
+            resolve("Respuesta incorrecta ☝🏻😌");
           }
         });
       },
@@ -49,11 +49,11 @@ export default class HomeComponent {
 
       Swal.fire({
         title: "🎊 Respuesta correcta 🎊",
-        text: "Espero que te guste el detalle 🎀",
+        text: "Porque al final no se trata de una fecha, sino de la forma en que uno cuida, acompaña y está.",
         icon: "success",
         showConfirmButton: false,
         width: 500,
-        timer: 5000
+        timer: 8000
       });
       this.showMap.set(true);
     }
